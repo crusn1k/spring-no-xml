@@ -33,11 +33,11 @@ public class AuthController {
 		if(result.hasErrors()){
 			return "login";
 		}
-		String userId = request.getParameter("user");
-		String pass = request.getParameter("pwd");
+		String userId = model.getUserName();
+		String pass = model.getPassword();
 		Authentication auth = new UsernamePasswordAuthenticationToken(userId, pass, AuthorityUtils.createAuthorityList("ROLE_ADMIN"));
 		SecurityContextHolder.getContext().setAuthentication(auth);		
-		return "redirect:test";
+		return "redirect:home";
 	}
 }
 

@@ -6,7 +6,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import filters.LolFilter;
+import filters.TheFilter;
 
 @Order(1)
 public class Initializer extends
@@ -29,6 +29,6 @@ public class Initializer extends
     
     @Override
     protected Filter[] getServletFilters() {
-    	return new Filter[]{new LolFilter(), new DelegatingFilterProxy("springSecurityFilterChain")};
+    	return new Filter[]{new TheFilter(), new DelegatingFilterProxy("springSecurityFilterChain")};
     }
 }

@@ -13,7 +13,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeUrls().antMatchers("/**").hasRole("ADMIN").and()
-			.formLogin().loginUrl("/login").loginProcessingUrl("/loginNotUsed").defaultSuccessUrl("/test").permitAll().and()
+			.formLogin().loginUrl("/login").loginProcessingUrl("/loginNotUsed").defaultSuccessUrl("/home").permitAll().and()
 			.logout().logoutUrl("/logout").logoutSuccessUrl("/login").permitAll();
 	}
 
